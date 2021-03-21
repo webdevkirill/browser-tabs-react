@@ -1,7 +1,7 @@
 import React from 'react';
 import { useHighlight } from '../hooks/useHighlight';
 
-export const Tab = ({ text }) => {
+export const Tab = ({ children }) => {
 	const { highlightStyle, moveHighlight, hideHighlight } = useHighlight();
 
 	return (
@@ -11,7 +11,7 @@ export const Tab = ({ text }) => {
 			onMouseMove={moveHighlight}
 		>
 			<div className='highlight' style={highlightStyle} />
-			<a>{text}</a>
+			{children}
 		</div>
 	);
 };
