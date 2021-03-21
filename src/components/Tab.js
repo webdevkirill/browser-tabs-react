@@ -1,23 +1,8 @@
-import React, { useState } from 'react';
+import React from 'react';
+import { useHighlight } from '../hooks/useHighlight';
 
 export const Tab = ({ text }) => {
-	const [highlightStyle, setHighlightStyle] = useState({
-		left: 0,
-		opacity: 0,
-	});
-
-	const moveHighlight = (e) => {
-		setHighlightStyle({
-			left: e.nativeEvent.layerX - 150,
-		});
-	};
-
-	const hideHighlight = (e) => {
-		setHighlightStyle({
-			left: e.nativeEvent.layerX - 150,
-			opacity: 0,
-		});
-	};
+	const { highlightStyle, moveHighlight, hideHighlight } = useHighlight();
 
 	return (
 		<div
